@@ -205,7 +205,8 @@ export class ConnectionString extends URLWithoutHost {
     if (!this.pathname) {
       this.pathname = '/';
     }
-    Object.setPrototypeOf(this.searchParams, caseInsenstiveURLSearchParams(this.searchParams.constructor as any).prototype);
+
+    Object.setPrototypeOf(this.searchParams, caseInsenstiveURLSearchParams(this.searchParams?.constructor as any).prototype);
   }
 
   // The getters here should throw, but that would break .toString() because of
